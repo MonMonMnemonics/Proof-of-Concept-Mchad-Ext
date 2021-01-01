@@ -3,7 +3,7 @@
 
 function SendDataHTTP(JsonizedString){
 	var xhr = new XMLHttpRequest();
-	xhr.open("POST", 'http://127.0.0.1:80/'); //	The only usable port for Http request
+	xhr.open("POST", 'http://127.0.0.1:80/'); //	The only usable port for local Http request
 	xhr.setRequestHeader("Content-Type", "application/json"); 
 	xhr.send(JsonizedString);
 }
@@ -272,7 +272,7 @@ btn5.textContent = "Chat Listener";
 function TestSend() {
 	if (document.location.toString().indexOf("www.youtube.com/watch?v=") != -1){
         ws = new WebSocket("ws://localhost:20083/"); //	This one is fixed, host 2008 for Mio's birthday 20 Aug and 3 for "Mi" in Mio
-		ws.onopen = function (event) {
+		ws.onopen = function (event) {	     // Will throw error if the local server is not up yet.
 			asyncCall2();
 		    };
         
