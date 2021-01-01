@@ -1,0 +1,114 @@
+----------------------------------------------------------- IN -----------------------------------------------------------
+										(NO 2 WAYS CONNECTION EXCEPT FOR WEBSOCKET)
+SET TIME
+    data = {                           
+		"Act": 'MChad-TimeSetApp',     //  TYPE OF OPERATION
+		"UID": 'Youtube ' + VidID,     //  CHECK IF IT MATCHES THE UID OF THE CURRENT EXTENSION
+		"Time": '590'                  //  TIME SET IN SECOND
+	};
+
+PLAY VIDEO
+    data = {                           
+		"Act": 'MChad-PlayApp',        //  TYPE OF OPERATION
+		"UID": 'Youtube ' + VidID      //  CHECK IF IT MATCHES THE UID OF THE CURRENT EXTENSION
+	};
+
+PAUSE VIDEO
+    data = {                           
+		"Act": 'MChad-PauseApp',       //  TYPE OF OPERATION
+		"UID": 'Youtube ' + VidID      //  CHECK IF IT MATCHES THE UID OF THE CURRENT EXTENSION
+	};
+
+ROLL CALL
+    data = {                           
+		"Act": 'MChad-RollCallApp'     //  TYPE OF OPERATION
+	};
+
+LIVE CHAT SEND
+    data = {                           
+		"Act": 'MChad-LiveSend',       //  TYPE OF OPERATION
+		"UID": 'Youtube ' + VidID,     //  CHECK IF IT MATCHES THE UID OF THE CURRENT EXTENSION
+        "Text": 'Mimimimimyoon'        //  TEXT TO SEND TO LIVE CHAT
+	};
+
+FILTER APPEND
+    data = {                           
+		"Act": 'MChad-FilterApp',      //  TYPE OF OPERATION
+		"UID": 'Youtube ' + VidID,     //  CHECK IF IT MATCHES THE UID OF THE CURRENT EXTENSION
+        "Atr": 'Content',              //  TYPE TO CHECK
+        "Val": '[JP]'                  //  MATCH AGAINST
+	};
+
+FILTER CLEAR
+    data = {                           
+		"Act": 'MChad-FilterClr',      //  TYPE OF OPERATION
+		"UID": 'Youtube ' + VidID      //  CHECK IF IT MATCHES THE UID OF THE CURRENT EXTENSION
+	};
+
+EXTENSION MODE
+    data = {                           
+		"Act": 'MChad-SetMode',        //  TYPE OF OPERATION
+		"UID": 'Youtube ' + VidID,     //  CHECK IF IT MATCHES THE UID OF THE CURRENT EXTENSION
+		"Mode": 'Listener'  	       //  SET TYPE OF THE EXTENSION MODE ("LISTENER", "ARCHIVE", "LIVECHAT", "IDLE")
+	};
+
+START EXTENSION
+    data = {                           
+		"Act": 'MChad-StartMode',      //  TYPE OF OPERATION
+		"Mode": 'Listener'  	       //  SET TYPE OF THE EXTENSION MODE ("LISTENER", "ARCHIVE", "LIVECHAT")
+	};
+
+UNSYNC EXTENSION
+    data = {                           
+		"Act": 'MChad-Unsync',         //  TYPE OF OPERATION
+		"UID": 'Youtube ' + VidID      //  CHECK IF IT MATCHES THE UID OF THE CURRENT EXTENSION
+	};
+
+=========================================================== OUT ==========================================================
+ENTRY
+    data = {                            
+		"Act": 'MChad-Entry',          //  TYPE OF OPERATION
+		"UID": 'Youtube ' + VidID,     //  FOR IN-APP FILTERING
+		"Tag": '',                     //  TAGS TO HELP IN-APP FILTERING
+		"Stime": 'STIME 1',            //  TIMESTAMP IN HH:mm:ss FORMAT
+		"Stext": 'Websocket STEXT 1',  //  MAIN TEXT MESSAGE
+		"CC": 'CF1111',                //  COLOUR FOR THE CHARACTERS IN RGB HEX FORMAT WITHOUT THE #
+		"OC": '0041A8'                 //  COLOUR FOR THE OUTLINE OF THE CHARACTERS IN RGB HEX FORMAT WITHOUT THE #
+	};
+
+SET TIME
+    data = {                           
+		"Act": 'MChad-TimeSet',        //  TYPE OF OPERATION
+		"UID": 'Youtube ' + VidID,     //  CHECK IF IT MATCHES THE CUREENT UID THE APP LISTENING TO
+		"Time": '590'                  //  TIME SET IN SECOND
+	};
+
+PLAY VIDEO
+    data = {                           
+		"Act": 'MChad-Play',           //  TYPE OF OPERATION
+		"UID": 'Youtube ' + VidID      //  CHECK IF IT MATCHES THE CUREENT UID THE APP LISTENING TO
+	};
+
+PAUSE VIDEO
+    data = {                           
+		"Act": 'MChad-Pause',          //  TYPE OF OPERATION
+		"UID": 'Youtube ' + VidID      //  CHECK IF IT MATCHES THE CUREENT UID THE APP LISTENING TO
+	};
+
+ROLL CALL ANSWER					   //  ONLY FOR WEBSOCKET
+    data = {                           
+		"Act": 'MChad-RollCall',       //  TYPE OF OPERATION
+		"UID": 'Youtube ' + VidID      //  SEND THE UID FOR APP ROLL CALL
+	};
+
+ON CONNECTION OPEN					   //  ONLY FOR WEBSOCKET
+    data = {                           
+		"Act": 'MChad-Reg',       	   //  TYPE OF OPERATION
+		"UID": 'Youtube ' + VidID      //  SEND THE UID FOR APP REGISTER
+	};
+
+LIVE CHAT SENT					  	   //  ONLY FOR WEBSOCKET
+    data = {                           
+		"Act": 'MChad-ChatSent',  	   //  TYPE OF OPERATION
+		"UID": 'Youtube ' + VidID      //  SEND THE UID FOR APP REGISTER
+	};
