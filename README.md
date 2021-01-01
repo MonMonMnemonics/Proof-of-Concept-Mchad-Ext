@@ -8,3 +8,6 @@ There are basically 2 different types of connection.
 CheatSheet.txt shows the type and format of data that the app accept/broadcast.
 
 It also contains some goodies on how to get livechat data from youtube with MutationObserver and how to enter data and trigger send live chat in youtube.
+
+To start the local websocket server or HTTP listener
+Open MChad -> Login Listener -> Local Room -> Create
